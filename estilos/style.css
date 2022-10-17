@@ -1,0 +1,356 @@
+
+/* ubicacion cards en html */
+#root{
+  display: grid;
+  margin-left: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  grid-template-rows: 520px;
+  grid-row-gap: 2px;
+  gap: 12px ;
+  margin-bottom: 6px;
+  grid-auto-flow:  row;
+  width: 100%;
+  align-items: stretch;
+justify-items: center;
+margin: 0vw 5vw 2vw 2vw;
+}
+/* titulo neumaticos centro  */
+#texto {
+  font-size: xx-large;
+  font-weight: bold;
+  color: rgba(255, 187, 0);
+}
+#texto:before {
+  content: "Neumaticos Centro";
+  color: rgba(255, 187, 0);
+}
+/* detalle de la card, pasa a visualizar con mas info y foto agrandada */
+#detalle{
+  display:none;
+}
+/* tabla de carrito pago */
+#main{
+  padding-left: 10%;
+  justify-content: center;
+}
+.table{
+width: 80%;
+align-items: center;
+}
+.reduc-img{
+  width: 40px;
+  height:40px;
+}
+
+.rounded-circle {
+  width: 55px;
+  height: 55px;
+  animation-name: animar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* sweetalert diseos modificados */
+.swal2-styled.swal2-confirm{
+  width:100px;
+}
+
+/* animacion cubierta en header */
+@keyframes animar {
+  0% {
+    transform: rotateZ(45deg);
+  }
+  25% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(90deg);
+  }
+  75% {
+    transform: rotateZ(120deg);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+
+/* barranavegacion-control */
+.nav-link {
+  color: rgba(255, 187, 0);
+  margin: 15px;
+}
+.nav-item .btn {
+  text-align: justify;
+  justify-content: space-evenly;
+}
+.navbar-light .navbar-nav .nav-link {
+  background-color: rgb(243, 201, 66);
+}
+.nav-link .btn:hover {
+  color: black;
+}
+/* cards */
+.card {
+  padding-top: 5px;
+  border:none;
+  border-radius: 30px;
+  width: 240px;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card-title{
+margin: 0px;
+}
+div.car-body{ 
+  height: 85px ;
+  display:block;
+  padding-bottom:5px;
+  align-content: center;
+  margin-top: 0px;
+}
+.card:hover {
+  box-shadow: rgba(232, 234, 103, 0.797) 0px 8px 24px;
+}
+.card-img-top {
+  width:150px;
+  height: 150px;
+  align-self: center;
+}
+.nav:hover {
+  align-items: center;
+  color: #8495f8;
+  font-weight: 900;
+}
+.nav-item .btn{
+  text-align: justify;
+  justify-content: space-evenly;
+  display: flex;
+}
+.btn {
+  align-items: center;
+  margin-top: 10px;
+  height: 45px;
+  display:flexbox;
+  font-weight:900;
+  line-height: 0.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 2vw;
+  border-radius: 0.25rem;
+  transform: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.footer .nav{
+  display: block;
+  position: sticky-botton;
+  text-align: center;
+  width: 100%;
+  color: #e0e93d;
+  font-weight: 900;
+}
+.footer .nav:hover{
+  color: #3a3b1f;
+}
+
+h4{
+background-color: #ccc;
+  width: 80%;
+  text-align: center;
+}
+
+input{
+  width:92%;
+  height: 40px;
+  font-size: 18px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  display: flex;
+  margin-left: 2%;
+  border: 1px solid #ccc;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+/* botones */
+button {
+  width: 50%;
+  font-size: 15px;
+  background-color: rgb(255, 187, 0);
+  color: rgb(14, 13, 13);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 5px;
+  height: 40px;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+button b {
+  font-size: small;
+  }
+.btn-pagos{
+  width: 37%;
+  align-items: center;
+  font-size: 15px;
+  background-color: rgb(255, 187, 0);
+  color: rgb(14, 13, 13);
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-top: 5px;
+  margin-left: 2%;
+  height: 40px;
+}
+/* carrito imagen en page */
+#carrito{
+  width: 70px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  top:14%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  }
+
+/* query */
+@media only screen and (max-width: 1200px) {
+  .container-fluid {
+    height: auto;
+  }
+  .rounded-circle {
+    display: none;
+  }
+
+  .card button {
+    font-size: calc(0.3rem + 1vw);
+  }
+  #texto {
+    font-size: calc(1em + 1vw);
+  }
+  #carrito{
+    position: fixed;
+    right: 0;
+    top:17%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    }
+}
+@media only screen and (max-width: 810px) {
+  .titulo1:before {
+    content: attr(data-desktoptext);
+  }
+  input{
+    width:80%;
+    margin-left: 2%;
+  }
+  #carrito{
+    position: fixed;
+    right: 0;
+    top:18%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    }
+    .btn-pagos{width: 80%;}
+}
+@media (max-width: 900px) and (min-width: 450px) {
+    #texto:before {
+      content: "Neumaticos Centro";
+    }
+    #carrito{
+      position: fixed;
+      right: 0;
+      top:18%;
+      font-size: 1.5rem;
+      display:flex;
+      flex-direction: column;
+      z-index: 100;
+      }
+      input{
+        width:85%;
+        margin-left: 2%;
+    
+      }
+  }
+@media only screen and (max-width: 577px) {
+  .rounded-circle {
+    display: none;
+  }
+  .card button {
+    font-size: calc(0.6em + 1vw);
+  }
+  #carrito{
+    position: fixed;
+    right: 0;
+    top:18%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    }
+    input{
+      width:80%;
+      margin-left: 5%;
+  
+    }
+}
+@media (max-width: 400px) {
+  #texto:before {
+    content: "N Centro";
+  }
+  input{
+    width:90%;
+    margin-left: 5%;
+font-size: 4vw;
+  }
+  #carrito{
+    width: 70px;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    top:86%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    }
+}
+@media only screen and (max-width: 370px) {
+  .titulo1:before {
+    content: attr(data-phonetext);
+  }
+  
+  #carrito{
+    width: 70px;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    top:86%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    }
+
+}
+/* @media only screen and (max-width: 244px) {
+
+} */
+
