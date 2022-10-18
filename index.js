@@ -4,6 +4,7 @@ import {Producto} from "./app/class.js"
 let main = document.querySelector("#root")
 let imgcarrito= document.querySelector("#carrito")
 let input =document.querySelector("#buscar")
+let btnsCategoria = document.querySelectorAll(".btn-categoria")
 const arrayNeumaticos = [];
 const arrayCarrito=[];
 
@@ -120,42 +121,77 @@ if (resultado.length>0) {
 }
 });
 
+
+
+
+for (const btn of btnsCategoria)  {
+    btn.addEventListener("click",(event)=>{
+    event.preventDefault()
+    let Categoria= event.target.textContent;
+    console.log(Categoria);
+    let arrayBusca=arrayNeumaticos;
+    console.log(arrayBusca)
+    main.innerHTML="";
+    let busqueda;
+switch (Categoria) { 
+    case "autos":
+        busqueda =arrayBusca.filter(el=>el.categoria == "auto")
+        CrearCards(busqueda)
+        console.log(busqueda);
+        break;
+    case "camionetas":
+        busqueda = arrayBusca.filter(el=>el.categoria == "camioneta")
+        CrearCards(busqueda)
+        break;
+    case "camiones":
+        busqueda=arrayBusca.filter(el=>el.categoria == "camion")
+        CrearCards(busqueda)
+        break;
+    case "motos":
+        busqueda=arrayBusca.filter(el=>el.categoria == "motos")
+        CrearCards(busqueda)
+        break;
+    default:
+        break;
+}
+
+})}
 // buscar por categoria auto
-let btnauto= document.querySelector("#btnauto")
-    btnauto.addEventListener("click",(event)=>{
-        event.preventDefault()
-        main.innerHTML="";
-            let resauto = arrayNeumaticos.filter(el=>el.categoria == "auto")
-            console.dir(resauto);
-            CrearCards(resauto)
-        })
+// let btnauto= document.querySelector("#btnauto")
+//     btnauto.addEventListener("click",(event)=>{
+//         event.preventDefault()
+//         main.innerHTML="";
+//             let resauto = arrayNeumaticos.filter(el=>el.categoria == "auto")
+//             console.dir(resauto);
+//             CrearCards(resauto)
+//         })
 
-// buscar xcamioneta
-let btncamioneta= document.querySelector("#btncamioneta")
-    btncamioneta.addEventListener("click",(event)=>{
-        event.preventDefault()
-        main.innerHTML="";
-            let rescamioneta = arrayNeumaticos.filter(el=>el.categoria == "camioneta")
-            CrearCards(rescamioneta)
-        })
+// // buscar xcamioneta
+// let btncamioneta= document.querySelector("#btncamioneta")
+//     btncamioneta.addEventListener("click",(event)=>{
+//         event.preventDefault()
+//         main.innerHTML="";
+//             let rescamioneta = arrayNeumaticos.filter(el=>el.categoria == "camioneta")
+//             CrearCards(rescamioneta)
+//         })
 
-//  busqueda x camion
-let btncamion= document.querySelector("#btncamion")
-    btncamion.addEventListener("click",(event)=>{
-        event.preventDefault()
-        main.innerHTML="";
-            let rescamion = arrayNeumaticos.filter(el=>el.categoria == "camion")
-            CrearCards(rescamion)
-        })
+// //  busqueda x camion
+// let btncamion= document.querySelector("#btncamion")
+//     btncamion.addEventListener("click",(event)=>{
+//         event.preventDefault()
+//         main.innerHTML="";
+//             let rescamion = arrayNeumaticos.filter(el=>el.categoria == "camion")
+//             CrearCards(rescamion)
+//         })
 
-// buscar por categoria moto
-let btnmoto= document.querySelector("#btnmotos")
-    btnmoto.addEventListener("click",(event)=>{
-        event.preventDefault()
-        main.innerHTML="";
-            let resmoto= arrayNeumaticos.filter(el=>el.categoria == "motos")
-            CrearCards(resmoto)
-})
+// // buscar por categoria moto
+// let btnmoto= document.querySelector("#btnmotos")
+//     btnmoto.addEventListener("click",(event)=>{
+//         event.preventDefault()
+//         main.innerHTML="";
+//             let resmoto= arrayNeumaticos.filter(el=>el.categoria == "motos")
+//             CrearCards(resmoto)
+// })
 
 
 document.addEventListener("DOMContentLoaded", () =>{

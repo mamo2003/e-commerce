@@ -80,6 +80,7 @@ align-items: center;
   margin: 15px;
 }
 .nav-item .btn {
+  width: 120px;
   text-align: justify;
   justify-content: space-evenly;
 }
@@ -214,6 +215,7 @@ button:hover {
   margin-left: 2%;
   height: 40px;
 }
+
 /* carrito imagen en page */
 #carrito{
   width: 70px;
