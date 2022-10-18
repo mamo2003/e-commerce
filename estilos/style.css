@@ -74,7 +74,7 @@ align-items: center;
   }
 }
 
-/* barranavegacion-control */
+/* barra navegacion-control */
 .nav-link {
   color: rgba(255, 187, 0);
   margin: 15px;
@@ -89,33 +89,7 @@ align-items: center;
 .nav-link .btn:hover {
   color: black;
 }
-/* cards */
-.card {
-  padding-top: 5px;
-  border:none;
-  border-radius: 30px;
-  width: 240px;
-  text-align: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.card-title{
-margin: 0px;
-}
-div.car-body{ 
-  height: 85px ;
-  display:block;
-  padding-bottom:5px;
-  align-content: center;
-  margin-top: 0px;
-}
-.card:hover {
-  box-shadow: rgba(232, 234, 103, 0.797) 0px 8px 24px;
-}
-.card-img-top {
-  width:150px;
-  height: 150px;
-  align-self: center;
-}
+
 .nav:hover {
   align-items: center;
   color: #8495f8;
@@ -149,6 +123,35 @@ div.car-body{
   transform: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+/* cards */
+.card {
+  padding-top: 5px;
+  border:none;
+  border-radius: 30px;
+  width: 240px;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card-title{
+margin: 0px;
+}
+div.car-body{ 
+  height: 85px ;
+  display:block;
+  padding-bottom:5px;
+  align-content: center;
+  margin-top: 0px;
+}
+.card:hover {
+  box-shadow: rgba(232, 234, 103, 0.797) 0px 8px 24px;
+}
+.card-img-top {
+  width:150px;
+  height: 150px;
+  align-self: center;
+}
+
+/* footer */
 .footer .nav{
   display: block;
   position: sticky-botton;
@@ -184,7 +187,8 @@ input{
 /* botones */
 button {
   width: 50%;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 700;
   background-color: rgb(255, 187, 0);
   color: rgb(14, 13, 13);
   border: 1px solid #ccc;
@@ -198,9 +202,6 @@ button:hover {
   opacity: 0.6;
 }
 
-button b {
-  font-size: small;
-  }
 .btn-pagos{
   width: 37%;
   align-items: center;
@@ -235,9 +236,6 @@ button b {
     display: none;
   }
 
-  .card button {
-    font-size: calc(0.3rem + 1vw);
-  }
   #texto {
     font-size: calc(1em + 1vw);
   }

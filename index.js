@@ -33,8 +33,8 @@ main.innerHTML  += `
             <p class="card-title">estado:${estado}</p>
             <p class="card-title" id="detalle"> ${detalle}</p>
             <div class="card-body">
-            <button href="" class="btn btn-warning" id="masinfo" data-id=${id} data-ubicacion=${ubicacion}><b>+ info</b></button> 
-            <button href="#"  data-id=${id} class ="agregar" class="btn btn-warning"><b> +Carrito</b></button>          
+            <button href="" class="btn btn-warning" id="masinfo" data-id=${id} data-ubicacion=${ubicacion}>+ info</button> 
+            <button href="#"  data-id=${id} class ="agregar" class="btn btn-warning">+Carrito</button>          
             </div>
         </div>
     </div>
