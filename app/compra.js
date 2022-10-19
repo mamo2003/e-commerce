@@ -18,7 +18,7 @@ const getCompra = () =>{
         console.log(subtotal);
         table.innerHTML +=`
         <tr>
-        <th><img class="reduc-img"src="${ubicacion}"></th>  
+        <th><img class="reduc-img"src=".${ubicacion}"></th>  
         <td>${cantidad}</td>
         <td>${medida}</td>
         <td>${marca}</td>
