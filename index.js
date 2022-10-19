@@ -122,8 +122,6 @@ if (resultado.length>0) {
 });
 
 
-
-
 for (const btn of btnsCategoria)  {
     btn.addEventListener("click",(event)=>{
     event.preventDefault()
@@ -154,44 +152,7 @@ switch (Categoria) {
     default:
         break;
 }
-
 })}
-// buscar por categoria auto
-// let btnauto= document.querySelector("#btnauto")
-//     btnauto.addEventListener("click",(event)=>{
-//         event.preventDefault()
-//         main.innerHTML="";
-//             let resauto = arrayNeumaticos.filter(el=>el.categoria == "auto")
-//             console.dir(resauto);
-//             CrearCards(resauto)
-//         })
-
-// // buscar xcamioneta
-// let btncamioneta= document.querySelector("#btncamioneta")
-//     btncamioneta.addEventListener("click",(event)=>{
-//         event.preventDefault()
-//         main.innerHTML="";
-//             let rescamioneta = arrayNeumaticos.filter(el=>el.categoria == "camioneta")
-//             CrearCards(rescamioneta)
-//         })
-
-// //  busqueda x camion
-// let btncamion= document.querySelector("#btncamion")
-//     btncamion.addEventListener("click",(event)=>{
-//         event.preventDefault()
-//         main.innerHTML="";
-//             let rescamion = arrayNeumaticos.filter(el=>el.categoria == "camion")
-//             CrearCards(rescamion)
-//         })
-
-// // buscar por categoria moto
-// let btnmoto= document.querySelector("#btnmotos")
-//     btnmoto.addEventListener("click",(event)=>{
-//         event.preventDefault()
-//         main.innerHTML="";
-//             let resmoto= arrayNeumaticos.filter(el=>el.categoria == "motos")
-//             CrearCards(resmoto)
-// })
 
 
 document.addEventListener("DOMContentLoaded", () =>{

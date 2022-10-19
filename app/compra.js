@@ -3,6 +3,11 @@ import {levantarCarrito} from "../index.js"
 let table = document.querySelector(".table")
 let itotal = document.querySelector(".total")
 let imgcarrito= document.querySelector("#carrito")
+
+imgcarrito.style.display = "none";
+document.querySelector("#buscar").style.display = "none";
+
+
 // hacer pedido al arraycarrito y creo tabla
 const getCompra = () =>{
     let compradb =levantarCarrito()
@@ -99,6 +104,9 @@ btn.addEventListener("click",()=>{
 })
 }
 EventoCancelar()
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", getCompra)
