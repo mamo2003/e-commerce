@@ -16,14 +16,23 @@ sumarCantidad(){
     if (Number(this.cantidad)<=Number(this.stock)) {
         return this.cantidad++;
     }
-    return alert("no puedes comprar mas de lo que hay")
+    return Swal.fire({
+    icon: "error",
+    title: "te has cargado todas!!",
+    text: "no tenemos mas en stock!",
+    footer: "gracias por tu compra"
+    });
 }
 
 restarCantidad(){
-    if (this.cantidad <= 0) {alert("no puedes comprar menos de lo que hay");
-      return this.cantidad
+    if (this.cantidad <= 0) {
+    return this.cantidad
     }else{
         return this.cantidad--}
 }
+restarStock(){
 
+    Number(this.stock) - Number(this.cantidad);
+
+}
 }

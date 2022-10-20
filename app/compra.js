@@ -45,7 +45,7 @@ const eventoRestar = () => {
     });
   }
 };
-// evento eliminar total de ese neumatico del array
+// evento eliminar total de ese neumatico del array)sin funcionar aun
 const eventoEliminar = (indice) => {
   let btns = document.querySelectorAll(".btn-eliminar");
   console.log(btns);

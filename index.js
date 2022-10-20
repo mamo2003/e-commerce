@@ -65,6 +65,7 @@ for (const btn of btns)  {
         let producto = new Producto (ok.id,ok.medida,ok.marca,ok.ubicacion,ok.precio,ok.stock,ok.estado,ok.detalle,ok.categoria,ok.cantidad)
         console.log("no existe en carrito");
         producto.sumarCantidad()
+        producto.restarStock()
         arrayCarrito.push(producto) 
     }
     localStorage.setItem ("carrito",JSON.stringify(arrayCarrito))  
@@ -100,12 +101,16 @@ if (verTotCarrito > 0) {
 const EventoMasinfo = ()=>{
     let btns= document.querySelectorAll("#masinfo")
     for (const btn of btns) {
-    btn.addEventListener("click", ()=>{ 
-    Swal.fire(
-        'Disculpas!',
-        'proximante tendras mas informacion del producto aqui!',
-        'success'
-    )
+    btn.addEventListener("click", (event)=>{ 
+    let ok = arrayNeumaticos.find(el => el.id == event.target.attributes[3].value);
+    Swal.fire({
+    title: `${ok.medida}`,
+    text: `${ok.detalle}`,
+    imageUrl: `${ok.ubicacion}`,
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: `${ok.marca}`,
+    });
 })
 }
 }
@@ -156,7 +161,7 @@ switch (Categoria) {
 
 
 document.addEventListener("DOMContentLoaded", () =>{
-    getRequest()
-    ,ImgCarrito()
+    getRequest(),
+    ImgCarrito()
 })
 
