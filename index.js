@@ -58,18 +58,20 @@ for (const btn of btns)  {
         if (okid !== -1) {
         let producto = prueba[okid]
             console.log("existe, sumar 1");
-            producto.sumarCantidad()
+            producto.sumarCantidad();
+            // producto.restarStock();
             console.log(arrayCarrito);
     } else {
         let ok= arrayNeumaticos.find(el => el.id ==id);
         let producto = new Producto (ok.id,ok.medida,ok.marca,ok.ubicacion,ok.precio,ok.stock,ok.estado,ok.detalle,ok.categoria,ok.cantidad)
         console.log("no existe en carrito");
         producto.sumarCantidad()
-        producto.restarStock()
+        // producto.restarStock();
         arrayCarrito.push(producto) 
     }
     localStorage.setItem ("carrito",JSON.stringify(arrayCarrito))  
     ImgCarrito()
+
 })
 }
 }

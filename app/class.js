@@ -30,9 +30,11 @@ restarCantidad(){
     }else{
         return this.cantidad--}
 }
-restarStock(){
-
-    Number(this.stock) - Number(this.cantidad);
-
-}
+// restarStock(){
+//     if (this.cantidad == 1) {
+//         this.stock - this.cantidad;
+//     } else {
+//     -this.cantidad;
+//     }return this.stock;
+// }
 }
