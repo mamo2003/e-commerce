@@ -48,8 +48,6 @@ AgregarNeumaticos()
 // agrego al carrito
 const AgregarNeumaticos = () => {
   let btns = document.querySelectorAll(".agregar");
-  let prueba = levantarCarrito();
-  console.log(prueba);
   for (const btn of btns) {
     btn.addEventListener("click", (event) => {
     Swal.fire({
@@ -57,19 +55,19 @@ const AgregarNeumaticos = () => {
         icon: "success",
         title: "felicitaciones,acabas de agregar un Neumatico a tu compra!",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 900,
       });
+    //   let prueba = levantarCarrito();
       let id = event.target.attributes[1].value;
-      console.dir(id);
-      let okid = prueba.findIndex((el) => el.id == id);
+      let okid = arrayCarrito.findIndex((el) => el.id == id);
       console.log(okid);
       if (okid !== -1) {
-        let producto = prueba[okid];
+        let producto = arrayCarrito[okid];
         console.log("existe, sumar 1");
         producto.sumarCantidad();
         console.log(arrayCarrito);
       } else {
-        let ok = arrayNeumaticos.find((el) => el.id == id);
+        let ok = arrayNeumaticos.find(el => el.id == id);
         let producto = new Producto(
         ok.id,
         ok.medida,
@@ -90,7 +88,8 @@ const AgregarNeumaticos = () => {
       ImgCarrito();
     });
   }
-};
+}
+
 
 // itero array luego de refrescar la pagina  vuelvo a subir al localstorage
 export const levantarCarrito =()=>{
@@ -98,16 +97,16 @@ export const levantarCarrito =()=>{
     console.log(iCarro);
     for (const oi of iCarro) {
     let producto = new Producto(
-      oi.id,
-      oi.medida,
-      oi.marca,
-      oi.ubicacion,
-      oi.precio,
-      oi.stock,
-      oi.estado,
-      oi.detalle,
-      oi.categoria,
-      oi.cantidad
+    oi.id,
+    oi.medida,
+    oi.marca,
+    oi.ubicacion,
+    oi.precio,
+    oi.stock,
+    oi.estado,
+    oi.detalle,
+    oi.categoria,
+    oi.cantidad
     );
     console.log(producto);
     arrayCarrito.push(producto)
@@ -164,14 +163,13 @@ for (const btn of btnsCategoria)  {
     event.preventDefault()
     main.innerHTML = "";
     let Categoria= event.target.textContent;
-    console.log(Categoria);
     let arrayBusca=arrayNeumaticos;
-    console.log(arrayBusca)
     let busq;
 switch (Categoria) { 
     case "autos":
         busq = arrayBusca.filter((el) => el.categoria == "auto");
         CrearCards(busq);
+        busq
         console.log(busq);
         break;
     case "camionetas":
@@ -195,6 +193,6 @@ switch (Categoria) {
 
 document.addEventListener("DOMContentLoaded", () =>{
     getRequest(),
+    levantarCarrito(),
     ImgCarrito()
 })
-
