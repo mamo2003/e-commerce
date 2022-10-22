@@ -63,7 +63,7 @@ const eventoEliminar = (indice) => {
 
 // creo tabla
 const getCompra = () => {
-     table.innerHTML = `    <thead >
+     table.innerHTML = ` <thead >
       <tr>
         <th scope="col">Foto</th>
         <th scope="col">Unidades</th>

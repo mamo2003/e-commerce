@@ -21,7 +21,7 @@ CrearCards(arrayNeumaticos);
 // creo cards
 export const CrearCards = (array) => {
 array.forEach(element => {
-let{id,medida,marca,ubicacion,precio,stock,estado,detalle,categoria}=element;
+let{id,medida,marca,ubicacion,precio,stock,estado,detalle,categoria,cantidad}=element;
 main.innerHTML  += `
 <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
     <div class="col">
@@ -46,42 +46,69 @@ AgregarNeumaticos()
 } 
 
 // agrego al carrito
-const AgregarNeumaticos = ()=>{
-let btns= document.querySelectorAll(".agregar")
-let prueba = levantarCarrito();
-console.log(prueba);
-for (const btn of btns)  {
-    btn.addEventListener ("click",(event)=>{
-    let id= event.target.attributes[1].value;
-    console.dir(id)
-    let okid= prueba.findIndex(el => el.id == id);
-        if (okid !== -1) {
-        let producto = prueba[okid]
-            console.log("existe, sumar 1");
-            producto.sumarCantidad();
-            // producto.restarStock();
-            console.log(arrayCarrito);
-    } else {
-        let ok= arrayNeumaticos.find(el => el.id ==id);
-        let producto = new Producto (ok.id,ok.medida,ok.marca,ok.ubicacion,ok.precio,ok.stock,ok.estado,ok.detalle,ok.categoria,ok.cantidad)
+const AgregarNeumaticos = () => {
+  let btns = document.querySelectorAll(".agregar");
+  let prueba = levantarCarrito();
+  console.log(prueba);
+  for (const btn of btns) {
+    btn.addEventListener("click", (event) => {
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "felicitaciones,acabas de agregar un Neumatico a tu compra!",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+      let id = event.target.attributes[1].value;
+      console.dir(id);
+      let okid = prueba.findIndex((el) => el.id == id);
+      console.log(okid);
+      if (okid !== -1) {
+        let producto = prueba[okid];
+        console.log("existe, sumar 1");
+        producto.sumarCantidad();
+        console.log(arrayCarrito);
+      } else {
+        let ok = arrayNeumaticos.find((el) => el.id == id);
+        let producto = new Producto(
+        ok.id,
+        ok.medida,
+        ok.marca,
+        ok.ubicacion,
+        ok.precio,
+        ok.stock,
+        ok.estado,
+        ok.detalle,
+        ok.categoria,
+        ok.cantidad
+        );
         console.log("no existe en carrito");
-        producto.sumarCantidad()
-        // producto.restarStock();
-        arrayCarrito.push(producto) 
-    }
-    localStorage.setItem ("carrito",JSON.stringify(arrayCarrito))  
-    ImgCarrito()
-
-})
-}
-}
+        producto.sumarCantidad();
+        arrayCarrito.push(producto);
+      }
+      localStorage.setItem("carrito", JSON.stringify(arrayCarrito));
+      ImgCarrito();
+    });
+  }
+};
 
 // itero array luego de refrescar la pagina  vuelvo a subir al localstorage
 export const levantarCarrito =()=>{
-    let carrito = JSON.parse(localStorage.getItem("carrito"))  || []  ;
-    console.log(carrito);
-    for (const el of carrito) {
-    let producto = new Producto (el.id,el.medida,el.marca,el.ubicacion,el.precio,el.stock,el.estado,el.detalle,el.categoria,el.cantidad)
+    let iCarro = JSON.parse(localStorage.getItem("carrito")) || []  ;
+    console.log(iCarro);
+    for (const oi of iCarro) {
+    let producto = new Producto(
+      oi.id,
+      oi.medida,
+      oi.marca,
+      oi.ubicacion,
+      oi.precio,
+      oi.stock,
+      oi.estado,
+      oi.detalle,
+      oi.categoria,
+      oi.cantidad
+    );
     console.log(producto);
     arrayCarrito.push(producto)
 }
@@ -118,48 +145,52 @@ const EventoMasinfo = ()=>{
 }
 
 // busqueda input
+
 input.addEventListener("input",(event)=>{
-main.innerHTML=""
+main.innerHTML ="";
 let resultado = arrayNeumaticos.filter(el =>el.categoria.includes(event.target.value)) 
 if (resultado.length>0) {
     CrearCards(resultado)
+    console.log(resultado);
 } else {
     main.innerHTML=`<h3>no se encontraron articulos relacionados, busque nuevamente</h3>`
 }
 });
 
 
+
 for (const btn of btnsCategoria)  {
     btn.addEventListener("click",(event)=>{
     event.preventDefault()
+    main.innerHTML = "";
     let Categoria= event.target.textContent;
     console.log(Categoria);
     let arrayBusca=arrayNeumaticos;
     console.log(arrayBusca)
-    main.innerHTML="";
-    let busqueda;
+    let busq;
 switch (Categoria) { 
     case "autos":
-        busqueda =arrayBusca.filter(el=>el.categoria == "auto")
-        CrearCards(busqueda)
-        console.log(busqueda);
+        busq = arrayBusca.filter((el) => el.categoria == "auto");
+        CrearCards(busq);
+        console.log(busq);
         break;
     case "camionetas":
-        busqueda = arrayBusca.filter(el=>el.categoria == "camioneta")
-        CrearCards(busqueda)
+        busq = arrayBusca.filter((el) => el.categoria == "camioneta");
+        CrearCards(busq);
         break;
     case "camiones":
-        busqueda=arrayBusca.filter(el=>el.categoria == "camion")
-        CrearCards(busqueda)
+        busq = arrayBusca.filter((el) => el.categoria == "camion");
+        CrearCards(busq);
         break;
     case "motos":
-        busqueda=arrayBusca.filter(el=>el.categoria == "motos")
-        CrearCards(busqueda)
+        busq = arrayBusca.filter((el) => el.categoria == "motos");
+        CrearCards(busq);
         break;
     default:
         break;
 }
-})}
+})
+}
 
 
 document.addEventListener("DOMContentLoaded", () =>{
