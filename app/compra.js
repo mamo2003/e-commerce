@@ -60,7 +60,6 @@ const eventoEliminar = (indice) => {
   }
 };
 
-
 // creo tabla
 const getCompra = () => {
      table.innerHTML = ` <thead >
@@ -99,7 +98,6 @@ const getCompra = () => {
     eventoRestar(),
     eventoEliminar()
   }
-
 
 // alert , cierre compra positiva , vuelve al index.
 const EventoComprar = () => {
