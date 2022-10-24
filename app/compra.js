@@ -4,7 +4,7 @@ import { Producto } from "../app/class.js";
 let table = document.querySelector(".table");
 let itotal = document.querySelector(".total");
 let imgcarrito = document.querySelector("#carrito");
-let arrayCarrito=[]
+let arrayCarrito=[];
 imgcarrito.style.display = "none";
 document.querySelector("#buscar").style.display = "none";
 
