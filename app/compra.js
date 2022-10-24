@@ -1,10 +1,10 @@
-import {levantarCarrito} from "../index.js";
+
 import { Producto } from "../app/class.js";
 
 let table = document.querySelector(".table");
 let itotal = document.querySelector(".total");
 let imgcarrito = document.querySelector("#carrito");
-const arrayCarrito=levantarCarrito()
+let arrayCarrito=[]
 imgcarrito.style.display = "none";
 document.querySelector("#buscar").style.display = "none";
 
@@ -62,7 +62,7 @@ const eventoEliminar = (indice) => {
 
 // creo tabla
 const getCompra = () => {
-     table.innerHTML = ` <thead >
+    table.innerHTML = ` <thead >
       <tr>
         <th scope="col">Foto</th>
         <th scope="col">Unidades</th>
@@ -156,9 +156,17 @@ const EventoCancelar = () => {
 };
 EventoCancelar();
 
-document.addEventListener("DOMContentLoaded",
-eventoSumar(), 
-eventoRestar(),
-eventoEliminar(),
-getCompra(),
-)
+document.addEventListener("DOMContentLoaded",() => {
+for(const oi of JSON.parse(localStorage.getItem("carrito"))){let producto = new Producto( oi.id,
+    oi.medida,
+    oi.marca,
+    oi.ubicacion,
+    oi.precio,
+    oi.stock,
+    oi.estado,
+    oi.detalle,
+    oi.categoria,
+    oi.cantidad)
+    arrayCarrito.push(producto)}
+getCompra()
+})

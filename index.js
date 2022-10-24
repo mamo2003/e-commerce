@@ -57,7 +57,6 @@ const AgregarNeumaticos = () => {
         showConfirmButton: false,
         timer: 900,
       });
-    //   let prueba = levantarCarrito();
       let id = event.target.attributes[1].value;
       let okid = arrayCarrito.findIndex((el) => el.id == id);
       console.log(okid);
