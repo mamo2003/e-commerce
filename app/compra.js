@@ -33,15 +33,15 @@ const eventoRestar = () => {
   for (const btn of btns) {
     btn.addEventListener("click", (evento) => {
       let id = evento.target.attributes[1].textContent;
-      let idproducto = arrayCarrito.find((el) => el.id == id);
+      let idproducto = arrayCarrito.find(el => el.id == id);
       console.log(idproducto.id);
       idproducto.restarCantidad();
       let borrar=idproducto.cantidad
       console.log(borrar);
       if (borrar == 0) {
-        arrayCarrito.splice(borrar,1)}
+        arrayCarrito.splice(idproducto,0)}
       localStorage.setItem("carrito", JSON.stringify(arrayCarrito));
-      getCompra(arrayCarrito);
+      getCompra();
     });
   }
 };
@@ -53,7 +53,7 @@ const eventoEliminar = (indice) => {
     btn.addEventListener("click", (evento) => {
       let idproducto = arrayCarrito.find(el => el.id == evento.target.attributes[1].value);
       console.log(idproducto);
-      arrayCarrito.splice(idproducto,1)
+      arrayCarrito.splice(indice,1)
       localStorage.setItem("carrito", JSON.stringify(arrayCarrito));
       getCompra(arrayCarrito);
     });
